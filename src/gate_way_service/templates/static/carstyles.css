@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.car-item {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.car-item h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.car-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.car-item p:first-child {
+    margin-top: 10px;
+}
+
+.car-item p:last-child {
+    margin-bottom: 10px;
+}
+
+.car-item p span {
+    font-weight: bold;
+}

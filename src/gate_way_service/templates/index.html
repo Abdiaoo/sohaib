@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car List</title>
+    <link rel="stylesheet" href="D:\revu_projet\sohaib\CarRentalSystem-Microservers\src\gate_way_service\front_end\static\carstyles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .select-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .user-name {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="http://example.com/"><img src="D:\revu_projet\sohaib\CarRentalSystem-Microservers\src\gate_way_service\front_end\static\images\avatars\non.jpg" alt="User Avatar" class="user-avatar"></a>
+        <div>
+            <span class="user-name"></span>   
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Car List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Registration Number</th>
+                    <th>Power</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Availability</th>
+                    <th>Select</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for car in cars_data %}
+                    <tr>
+                        <td>{{ car['brand'] }}</td>
+                        <td>{{ car['model'] }}</td>
+                        <td>{{ car['registrationNumber'] }}</td>
+                        <td>{{ car['power'] }} HP</td>
+                        <td>{{ car['type'] }}</td>
+                        <td>${{ car['price'] }}</td>
+                        <td>{% if car['available'] %}Available{% else %}Not Available{% endif %}</td>
+                        <td><button class="select-button" onclick="redirectToSelect('{{ car['carUid'] }}')">Select</button></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function redirectToSelect(carUid) {
+            // Replace "example.com/select" with your actual select URL
+            var redirectUrl = "http://localhost:8080//api/v1/login";
+            window.location.href = redirectUrl;
+        }
+    </script>
+</body>
+</html>
