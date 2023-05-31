@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Car List</title>
-    <link rel="stylesheet" href="D:\revu_projet\sohaib\CarRentalSystem-Microservers\src\gate_way_service\front_end\static\carstyles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='carstyles.css') }}">
     <style>
         table {
             width: 100%;
@@ -57,7 +57,7 @@
 </head>
 <body>
     <nav>
-        <a href="http://example.com/"><img src="D:\revu_projet\sohaib\CarRentalSystem-Microservers\src\gate_way_service\front_end\static\images\avatars\non.jpg" alt="User Avatar" class="user-avatar"></a>
+        <a href="http://localhost:8080/api/v1/index"><img src="{{ url_for('static', filename='images/avatars/non.jpg') }}" alt="User Avatar" class="user-avatar"></a>
         <div>
             <span class="user-name"></span>
             <a href="http://localhost:8080/api/v1/login">Login</a>    
